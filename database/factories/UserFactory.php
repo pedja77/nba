@@ -21,3 +21,20 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Team::class, function(Faker $faker) {
+    return [
+        'name' => $faker->words(2, true),
+        'email' => $faker->unique()->safeEmail,
+        'address' => $faker->streetAddress,
+        'city' => $faker->city
+    ];
+});
+
+$factory->define(App\Player::class, function(Faker $faker) {
+    return [
+        'first_name' => $faker->firstNameMale,
+        'last_name' => $faker->lastName,
+        'email' => $faker->unique()->safeEmail
+    ];
+});
