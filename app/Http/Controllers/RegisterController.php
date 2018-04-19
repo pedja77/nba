@@ -1,0 +1,35 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\User;
+
+class RegisterController extends Controller
+{
+    public function create() {
+
+        return view('register');
+
+    }
+
+    public function store() {
+        //dd(request());
+
+        $this->validate(request(), [
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|confirmed'
+        ]);
+
+        $user = new User();
+        $user->name = request('name');
+        $user->email = request('email');
+        $user->password = bcrypt(request('password'));
+        $user->save();
+
+        //auth()->login($user);
+
+        return redirect('/');
+    }
+}
