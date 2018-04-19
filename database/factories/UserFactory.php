@@ -38,3 +38,9 @@ $factory->define(App\Player::class, function(Faker $faker) {
         'email' => $faker->unique()->safeEmail
     ];
 });
+
+$factory->define(App\Comment::class, function(Faker $faker) {
+    return [
+        'content' => $faker->text(200)
+    ];
+});
