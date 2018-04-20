@@ -1,0 +1,1 @@
+<p>Please restrain yourself from using the words such as idiot, stupid or similar</p>

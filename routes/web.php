@@ -29,4 +29,6 @@ Route::get('/logout', 'LoginController@logout');
 
 Route::post('/comments', 'CommentsController@store')->name('add-comment');
 
+Route::get('/forbidden', 'CommentsController@forbidden')->name('forbidden');
+
 
