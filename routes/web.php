@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'TeamsController@index');
+Route::get('/teams', 'TeamsController@index');
 
 Route::get('/teams/{id}', 'TeamsController@show')->name('show-team');
 

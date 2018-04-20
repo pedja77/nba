@@ -1,3 +1,10 @@
+@extends('layouts.master')
+
+@section('title')
+  Register
+@endsection
+
+@section('content')
 <form method="POST" action="/register">
 {{ csrf_field() }}
 <div class="form-group">
@@ -18,3 +25,4 @@
   </div>
   <button type="submit" class="btn btn-primary">Register</button>
 </form>
+@endsection

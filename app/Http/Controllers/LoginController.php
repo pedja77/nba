@@ -26,7 +26,7 @@ class LoginController extends Controller
             return redirect('/register');
         }
 
-        return redirect('/');
+        return redirect('/teams');
     }
 
     public function logout() {

@@ -18,5 +18,9 @@ class CommentsTableSeeder extends Seeder
                 $team->comments()->saveMany(factory(App\Comment::class, rand(2, 5))->make());
                 });
             
+        App\Comment::all()->each(function(App\Comment $comment) use ($usersCount) {
+            $comment->user_id = rand(1, $usersCount);
+            $comment->save();
+        });
     }
 }
