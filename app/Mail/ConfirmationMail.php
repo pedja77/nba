@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use App\User;
 
 class ConfirmationMail extends Mailable
 {
@@ -16,9 +17,12 @@ class ConfirmationMail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+
+    public $user;
+
+    public function __construct(User $user)
     {
-        //
+        $this->user = $user;
     }
 
     /**

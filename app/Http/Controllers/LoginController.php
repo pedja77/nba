@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class LoginController extends Controller
 {
@@ -12,7 +13,7 @@ class LoginController extends Controller
     }
 
     public function create() {
-
+        
         return view('login');
 
     }
@@ -25,6 +26,7 @@ class LoginController extends Controller
             //dd(request());
             return redirect('/register');
         }
+
 
         return redirect('/teams');
     }

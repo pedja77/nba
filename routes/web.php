@@ -27,4 +27,6 @@ Route::post('/login', 'LoginController@store');
 
 Route::get('/logout', 'LoginController@logout');
 
+Route::post('/comments', 'CommentsController@store')->name('add-comment');
+
 

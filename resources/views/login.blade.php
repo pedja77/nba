@@ -17,4 +17,8 @@
   </div>
   <button type="submit" class="btn btn-primary">Login</button>
 </form>
+
+<div class="alert alert-warning" role="alert">
+  Please check you inbox to verify your email
+</div>
 @endsection

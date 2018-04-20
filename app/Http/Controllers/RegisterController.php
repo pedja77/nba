@@ -33,10 +33,12 @@ class RegisterController extends Controller
         $user->name = request('name');
         $user->email = request('email');
         $user->password = bcrypt(request('password'));
-
-        Mail::to($user->email)->send(new ConfirmationMail());
+        $user->is_verified = false;
+        $user->verification_token = str_random(40);
 
         $user->save();
+
+        Mail::to($user)->send(new ConfirmationMail($user));
 
         //auth()->login($user);
 
